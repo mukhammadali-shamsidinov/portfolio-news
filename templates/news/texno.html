@@ -1,0 +1,18 @@
+{% extends 'news/base.html' %}
+{% load static %}
+{% block title %} Texnologiya Yangiliklar {% endblock title %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for news in texno_news %}
+        <a href="{{news.get_absolute_url}}">
+                    <div class="col-sm-8">
+            <img src="{{ news.image.url }}" alt="{{ news.title }}" width="100">
+            <p>{{ news.title }}</p>
+        </div>
+        </a>
+
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
